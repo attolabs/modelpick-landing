@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>modelpick — ship on open-weight models this weekend</title>
+<meta name="description" content="Open-weight starter kit: 4 provider adapters, <2s fallback, cost meter within ±2%. Clone, add one key, ship. $99 launch price, first 50 buyers.">
+<link rel="canonical" href="https://get.attolabs.dev/"><meta name="theme-color" content="#0b0f14">
+<meta property="og:type" content="website">
+<meta property="og:title" content="modelpick — ship on open-weight models this weekend">
+<meta property="og:description" content="Open-weight starter kit: 4 provider adapters, <2s fallback, cost meter within ±2%. Clone, add one key, ship. $99 launch price, first 50 buyers.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+<link rel="stylesheet" href="./style.css">
+<script>
+(function () {
+  'use strict';
+  var ph = window.posthog = window.posthog || [];
+  if (ph.__SV) return;
+  ph.__SV = true;
+  ['capture', 'identify', 'alias', 'register', 'register_once', 'people.set',
+   'people.set_once', 'opt_in_capturing'].forEach(function (m) {
+    ph[m] = function () { ph.push([m].concat(Array.prototype.slice.call(arguments))); };
+  });
+  ph.init = function (token, opts) {
+    ph._i = ph._i || [];
+    ph._i.push([token, opts]);
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = String(opts.api_host).replace('.i.posthog.com', '-assets.i.posthog.com') + '/static/array.js';
+    document.head.appendChild(s);
+  };
+})();
+posthog.init("phc_Bs9vM98TyRvMNDQdqgQ6T3x2AB9u6cPS2wSGbbG2TGzj", { api_host: 'https://eu.i.posthog.com' });
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"modelpick","applicationCategory":"DeveloperApplication","operatingSystem":"Node 22+","description":"Open-weight starter kit: 4 provider adapters, <2s fallback, cost meter within ±2%. Clone, add one key, ship. $99 launch price, first 50 buyers.","offers":{"@type":"Offer","price":79,"priceCurrency":"USD","availability":"https://schema.org/PreOrder"}}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-head">
+<nav class="wrap" aria-label="Main">
+  <a class="brand" href="#main" aria-label="modelpick home">
+    <svg class="mark" width="28" height="28" viewBox="0 0 28 28" role="img" aria-hidden="true" focusable="false">
+      <rect x="1" y="1" width="26" height="26" rx="6" fill="var(--surface-2)" stroke="var(--border)"/>
+      <rect x="6" y="9" width="16" height="3.5" rx="1.75" fill="var(--text-muted)"/>
+      <rect x="6" y="15.5" width="9" height="3.5" rx="1.75" fill="var(--accent)"/>
+    </svg>
+    <span class="wordmark">modelpick</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="https://github.com/modelpick/starter-kit" rel="noopener">GitHub</a></li>
+  </ul>
+</nav>
+</header>
+<main id="main">
+<section class="hero wrap" aria-labelledby="hero-h">
+<h1 id="hero-h">Ship on open-weight models this weekend.</h1>
+<p class="lede">A production-grade JavaScript starter kit: multi-provider by default,
+cost-visible from request one. Fresh clone + one API key &rarr; working chat in under 5 minutes.</p>
+<ul class="hero-specs">
+  <li><strong>4 providers</strong> wired: Novita, DeepInfra, Hyperbolic + any OpenAI-compatible base URL</li>
+  <li><strong>&lt;2s failover</strong>: ordered fallback + exponential-backoff retry when a provider drops</li>
+  <li><strong>&plusmn;2% cost meter</strong>: every request priced from versioned rates; <code>/costs</code> returns session totals</li>
+</ul>
+<div class="cta-row">
+  <a class="btn btn-primary" href="https://buy.stripe.com/7sYfZh0kognff1seb2cjS00">Buy the kit — £79</a>
+  <a class="btn btn-ghost" href="">Try the free chat demo &rarr;</a>
+</div>
+<p class="meta-line">Node 22+ · zero runtime deps · full source · verified 2025-08-23</p>
+</section>
+<section id="features" class="wrap section" aria-labelledby="features-h">
+<h2 id="features-h">What&rsquo;s in the kit</h2>
+<ul class="grid">
+  <li class="card">
+    <h3>Provider adapters</h3>
+    <p>Novita, DeepInfra, Hyperbolic, plus any OpenAI-compatible base URL. Streaming and JSON response modes. Tool calling passes through behind a per-adapter capability flag.</p>
+    <p class="meta-line">4 adapters · stream + json</p>
+  </li>
+  <li class="card">
+    <h3>Fallback + backoff</h3>
+    <p>Ordered fallback across providers on failure. Automatic retry with exponential backoff. Timeout policy is one config value, not scattered try/catch blocks.</p>
+    <p class="meta-line"><2s failover · 1 timeout knob</p>
+  </li>
+  <li class="card">
+    <h3>Cost meter</h3>
+    <p>Token usage per request priced in USD from versioned prices.json (per-model in/out rates). /costs endpoint returns session totals. Matches manual token math within ±2% on the fixture set.</p>
+    <p class="meta-line">±2% · versioned prices.json</p>
+  </li>
+  <li class="card">
+    <h3>Eval harness</h3>
+    <p>npm run eval runs prompt fixtures against any configured provider. String, regex, and JSON-shape graders. Prints a table and exits nonzero on regression.</p>
+    <p class="meta-line">3 graders · exit 1 on regression</p>
+  </li>
+</ul>
+</section>
+<section class="wrap section" aria-labelledby="strip-h">
+<h2 id="strip-h">The cost meter, on one screen</h2>
+<div class="table-wrap">
+<table>
+  <caption>Fixture chat session — 24,600 tokens in,
+  9,800 out, across the same open-weight model.
+  Static example rates; every real number ships dated.</caption>
+  <thead>
+    <tr><th scope="col">Provider</th><th scope="col" class="num">$/M in</th>
+    <th scope="col" class="num">$/M out</th><th scope="col" class="num">Session cost</th>
+    <th scope="col" class="num">Verified</th></tr>
+  </thead>
+  <tbody>
+    <tr class="is-cheapest">
+      <th scope="row">Novita<span class="cell-sub">Llama-3.3-70B</span></th>
+      <td class="num">$0.26</td>
+      <td class="num">$0.55</td>
+      <td class="num">$0.0118</td>
+      <td class="num muted">2025-08-23</td>
+    </tr>
+    <tr>
+      <th scope="row">DeepInfra<span class="cell-sub">Llama-3.3-70B</span></th>
+      <td class="num">$0.34</td>
+      <td class="num">$0.72</td>
+      <td class="num">$0.0154</td>
+      <td class="num muted">2025-08-23</td>
+    </tr>
+    <tr>
+      <th scope="row">Hyperbolic<span class="cell-sub">Llama-3.3-70B</span></th>
+      <td class="num">$0.62</td>
+      <td class="num">$0.79</td>
+      <td class="num">$0.0230</td>
+      <td class="num muted">2025-08-23</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p class="meta-line">Same session, 1.9&times; spread between
+the cheapest and priciest route. The kit prints totals like these after every turn &mdash;
+your users never see you guessing.</p>
+</section>
+<section id="pricing" class="wrap section" aria-labelledby="pricing-h">
+<h2 id="pricing-h">Pricing</h2>
+<div class="price-grid">
+  <article class="card price-card is-launch">
+    <p class="badge">Launch — first 50 buyers</p>
+    <p class="price"><span class="amount">£79</span> <s>£119</s></p>
+    <ul class="terms">
+      <li>1 developer license</li>
+      <li>Unlimited projects, commercial use included</li>
+      <li>Full source &mdash; no obfuscation, no phone-home</li>
+      <li>Zip download + private repo invite for updates</li>
+    </ul>
+    <a class="btn btn-secondary" href="https://buy.stripe.com/7sYfZh0kognff1seb2cjS00">Get the launch price</a>
+  </article>
+  <article class="card price-card">
+    <p class="badge badge-quiet">Standard</p>
+    <p class="price"><span class="amount">£119</span></p>
+    <ul class="terms">
+      <li>Same license, same source</li>
+      <li>Kicks in automatically after the first 50 sales</li>
+      <li>Launch buyers never pay a difference later</li>
+    </ul>
+    <a class="btn btn-secondary" href="https://buy.stripe.com/7sYfZh0kognff1seb2cjS00">Buy at standard price</a>
+  </article>
+</div>
+<aside class="callout" aria-label="What is not included">
+  <h3>What&rsquo;s NOT included (on purpose)</h3>
+  <p>Auth and users. Databases. Stripe/billing code. Docker. Vector stores.
+  Fine-tuning. Agent frameworks. You bring the stack; the kit stays lean and
+  every line it does ship is yours to read.</p>
+</aside>
+</section>
+<section id="faq" class="wrap section" aria-labelledby="faq-h">
+<h2 id="faq-h">FAQ</h2>
+<details class="faq-item">
+  <summary>Why not just use LiteLLM?</summary>
+  <p>LiteLLM is proxy infrastructure — a server you deploy to route traffic between providers. This kit is app-level starter code: chat UI, eval harness, and a cost meter wired into the request path, shipped as source you own and edit. The README states this comparison honestly; pick the proxy if routing is your product.</p>
+</details>
+<details class="faq-item">
+  <summary>What is the refund policy?</summary>
+  <p>14 days, no questions. Email the address on your receipt and the refund goes back to the original payment method. Launch buyers are covered identically.</p>
+</details>
+<details class="faq-item">
+  <summary>How is the kit delivered and licensed?</summary>
+  <p>Zip download immediately at purchase, plus an invite to the private GitHub repo for updates. License: one developer, unlimited projects, full source, commercial use included.</p>
+</details>
+<details class="faq-item">
+  <summary>What do I need to run it?</summary>
+  <p>Node 22+ and one OpenAI-compatible API key — Novita, DeepInfra, and Hyperbolic adapters ship in the box, and any other OpenAI-compatible base URL works through the generic adapter. No build step, no database.</p>
+</details>
+<details class="faq-item">
+  <summary>Do you sell inference or hosting?</summary>
+  <p>No. We sell code. You keep your provider relationship and your keys; nothing in the kit phones home.</p>
+</details>
+</section>
+<section id="newsletter" class="wrap section" aria-labelledby="news-h">
+<div class="newsletter card">
+  <h2 id="news-h">Weekly open-weight price moves</h2>
+  <p>One email a week: which model got cheaper, which provider spread closed,
+  what changed per provider. Every number dated. Unsubscribe anytime.</p>
+  <form class="news-form" data-newsletter novalidate>
+    <label for="news-email">Email address</label>
+    <div class="news-row">
+      <input id="news-email" name="email" type="email" autocomplete="email"
+        required placeholder="you@example.com" />
+      <!-- secondary style: the hero Buy button owns the page's one primary CTA -->
+      <button class="btn btn-secondary" type="submit">Subscribe</button>
+    </div>
+    <p class="form-status" role="status" aria-live="polite" data-news-status></p>
+  </form>
+</div>
+</section>
+</main>
+<footer class="site-foot">
+<div class="wrap">
+  <p class="foot-disclosure">Disclosure: some outbound links on this site may be
+  affiliate or sponsored placements. Paid placement buys visibility, never rank
+  order &mdash; rankings stay measured, and sponsored slots are always labeled.</p>
+  <p class="foot-neutral">Neutrality: modelpick measures providers and sells code.
+  We run no inference and take no money to change a number.</p>
+  <p class="foot-legal">&copy; 2026 ModelPick. Open-weight starter kit &mdash;
+  prices verified 2025-08-23.</p>
+</div>
+</footer>
+<script>
+(function () {
+  'use strict';
+  var form = document.querySelector('[data-newsletter]');
+  if (!form) return;
+  var status = form.querySelector('[data-news-status]');
+  var emailInput = form.querySelector('input[type="email"]');
+  var ENDPOINT = "";
+  function say(msg, ok) {
+    status.textContent = msg;
+    status.classList.toggle('is-error', !ok);
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = emailInput.value.trim();
+    if (!emailInput.checkValidity() || !email) {
+      say('Enter a valid email address.', false);
+      return;
+    }
+    if (!ENDPOINT) {
+      console.info('[modelpick] newsletter dev mode — no endpoint configured; captured:', email);
+      say('Dev build: newsletter capture is not wired yet — signup printed to the console.', true);
+      return;
+    }
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email }),
+    })
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        say('Subscribed — first price-move email lands this week.', true);
+        form.reset();
+      })
+      .catch(function () {
+        say('Could not reach the signup service. Try again in a minute.', false);
+      });
+  });
+})();
+</script>
+</body>
+</html>
